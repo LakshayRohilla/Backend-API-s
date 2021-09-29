@@ -1,12 +1,10 @@
-from fastapi import FastAPI, Body, Header
+from fastapi import FastAPI, Body
 from models.author import Author
 from models.user import User
-from models.book import Book
+
 
 """I`M MAKING A GIT REPOSITORY FOR THIS PROJECT NAMES AS backend_api`s, IT`S IN MY PERSONAL 
 GITHUB """
-"""To get "CUSTOM HEADERS" from that user we use header, we have to import those first"""  # v18
-"""In FastApi we can return models as a response"""  # v18
 
 app = FastAPI()
 
@@ -16,15 +14,6 @@ app = FastAPI()
 @app.post("/user")
 async def post_user(user: User):
     return {"Request Body": user}
-
-
-"""Here, I`m coping above API and making changes in it for "CUSTOM HEADERS", 
-as i dont want to make any changes in that."""
-
-
-@app.post("/user_header")
-async def post_user(user: User, x_custom: str = Header(...)):
-    return {"Request Body": user, "Request custom header": x_custom}
 
 
 """To get user password, [path API]"""
@@ -40,21 +29,6 @@ async def get_user_validation(password: str):
 
 @app.get("/book/{isbn}")
 async def get_book_with_isbn(isbn: str):
-    return {"Changeable parameter": isbn}
-
-
-"""Here, I`m coping above API and making changes in it for "CUSTOM HEADERS", 
-as i dont want to make any changes in that."""  # v18
-
-
-@app.get("/book/{isbn}", response_model=Book)
-async def get_book_with_isbn(isbn: str):
-    author_dict = {
-        "name": "Author 1 Lakshay",
-        "book": ["book1", "book2"]
-    }
-    author1 = Author(**author_dict)
-
     return {"Changeable parameter": isbn}
 
 
