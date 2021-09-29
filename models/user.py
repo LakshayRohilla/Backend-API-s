@@ -28,3 +28,6 @@ class User(BaseModel):
     """... means required, and if that field is not so imp you can also write is as,
     Query(None, regex="alkaloid")"""
     role: Role
+
+
+
