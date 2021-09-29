@@ -3,10 +3,10 @@ from models.author import Author
 from models.user import User
 from models.book import Book
 
-"""I`M MAKING A GIT REPOSITORY FOR THIS PROJECT NAMES AS backend_api`s, IT`S IN MY PERSONAL(RLAKSHAY14@GMAIL.COM) 
+"""I`M MAKING A GIT REPOSITORY FOR THIS PROJECT NAMES AS backend_api`s, IT`S IN MY PERSONAL 
 GITHUB """
-"""To get "CUSTOM HEADERS" from that user we use header, we have to import those first"""
-"""In FastApi we can return models as a response"""
+"""To get "CUSTOM HEADERS" from that user we use header, we have to import those first"""  # v18
+"""In FastApi we can return models as a response"""  # v18
 
 app = FastAPI()
 
@@ -44,7 +44,7 @@ async def get_book_with_isbn(isbn: str):
 
 
 """Here, I`m coping above API and making changes in it for "CUSTOM HEADERS", 
-as i dont want to make any changes in that."""
+as i dont want to make any changes in that."""  # v18
 
 
 @app.get("/book/{isbn}", response_model=Book)
@@ -80,7 +80,7 @@ async def patch_author_name(name: str = Body(..., embed=True)):
 """API takes both user and author objects in its body"""
 
 
-@app.post("/user/author")
+@app.post("/user/author")  # v18
 async def post_user_and_author(user: User, author: Author):
     """This is what we do when we wants to take multiple parameters"""
     return {"User is:": user, "Author is :": author}
