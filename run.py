@@ -121,7 +121,8 @@ async def post_user_and_authorwithparam(user: User, author: Author,
 
 """sometime we need file upload endpoint, lets say user can upload profile pic to the API 
 Endpoint that takes a file as a byte"""  # v18
-"""For running this API you have to install multipart also *pip install python-multipart*"""
+"""For running this API you have to install multipart also *pip install python-multipart* &
+we call it as a multi part endpoint."""
 
 
 @app.post("/user/photo")

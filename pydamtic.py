@@ -3,7 +3,8 @@ from pydantic import BaseModel
 
 
 class Book(BaseModel):
-    """We are making class(object type) that we can use as a variable type later on in the functions."""
+    """We are making class(object type) that we can use as a variable type later on in the
+    functions."""
     """For example : def print_book(book: Book[this is the object type we are making below]):"""
     """We used BaseModel for the validation"""
     name: str
