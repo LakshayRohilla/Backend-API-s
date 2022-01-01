@@ -5,7 +5,8 @@ from fastapi import Query
 """We need to create a user class to make things easier in fast API."""
 """For Fast API, you should always think as having classes, 
 since Fast API provides us auto validation and auto documentation"""
-"""since it does these automatic things with data, we always tend to create classes for our objects."""
+"""since it does these automatic things with data, we always tend to create classes for our 
+objects."""
 
 
 class Role(str, enum.Enum):
